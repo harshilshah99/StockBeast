@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gameroom</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="../../image/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../image/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../image/favicon/favicon-16x16.png">
+    <link rel="manifest" href="../../image/favicon/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+</head>
+<style>
+    body {
+        background-image: url("../../image/play.webp");
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: grid;
+        grid-template-rows: auto;
+        grid-template-columns: auto;
+        justify-content: center;
+        align-content: center;
+        margin: 50px auto;
+    }
+
+    #main {
+        background-image: url("../../image/Room.jpg");
+        background-size: cover;
+        padding: 50px;
+        min-width: 300px;
+        box-shadow: 8px 8px 5px gold;
+        border-radius: 20px;
+        border: 2px solid gold;
+    }
+
+    h1 {
+        background-color: black;
+        text-align: center;
+        color: cyan;
+        border-radius: 10px;
+        box-shadow: 5px 5px 3px white;
+    }
+
+    input {
+        margin-right: -50px;
+        padding: 5px;
+        border-radius: 5px;
+    }
+
+    .search {
+        font-size: 30px;
+        display: grid;
+        grid-template-columns: auto auto;
+        justify-content: space-around;
+        margin-bottom: 20px;
+    }
+    .list
+    {
+        background-color: black;
+        box-sizing: border-box;
+        margin: 0px auto;
+        border-radius: 20px;
+        border: 2px solid white; 
+        padding: 7px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    .list>div
+    {
+        color:azure;
+        background-color: blue;
+        display: inline-block;
+        padding: 5px;
+        border-radius: 5px;
+    }
+    button
+    {
+        
+        font-weight: 800;
+    }
+    .search>button
+    {
+        background-color: lightgreen;
+        color: black;
+    }
+</style>
+
+<body>
+    <div id="main">
+        <h1>Public</h1>
+        <div class="search">
+            <input type="text" id="public" placeholder="room name">
+            <button>search</button>
+        </div>
+        <div class="list">
+            <div>2000</div>
+            <div>BeastSlayer</div>
+            <div>22/2/2021</div>
+            <div><button>join</button></div>
+        </div>
+        <div class="list">
+            <div>2000</div>
+            <div>BeastSlayer</div>
+            <div>22/2/2021</div>
+            <div><button>join</button></div>
+        </div>
+        <div class="list">
+            <div>2000</div>
+            <div>BeastSlayer</div>
+            <div>22/2/2021</div>
+            <div><button>join</button></div>
+        </div>
+        <div class="list">
+            <div>2000</div>
+            <div>BeastSlayer</div>
+            <div>22/2/2021</div>
+            <div><button>join</button></div>
+        </div>
+        <div class="list">
+            <div>2000</div>
+            <div>BeastSlayer</div>
+            <div>22/2/2021</div>
+            <div><button>join</button></div>
+        </div>
+        <h1>Private</h1>
+        <div class="search">
+            <input type="text" id="private" placeholder="room name">
+            <button>search</button>
+        </div>
+        <div class="list">
+            
+        </div>
+    </div>
+</body>
+
+</html>

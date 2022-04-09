@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaderboard</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="../../image/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../image/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../image/favicon/favicon-16x16.png">
+    <link rel="manifest" href="../../image/favicon/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+</head>
+<style>
+    body {
+        display: grid;
+        grid-template-columns: auto;
+        justify-content: center;
+        background-image: url("../../image/play.webp");
+        background-size: cover;
+    }
+
+    #leaderboard {
+        background-color: black;
+        color: aqua;
+        min-height: 600px;
+        min-width: 350px;
+        border-radius: 20px;
+        box-shadow: 10px 10px 4px grey;
+        border: 2px solid white;   
+    }
+    h1
+    {
+        text-align: center;
+    }
+    .table
+    {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        justify-content: space-evenly;
+        font-size: 20px;
+        background-color: darkblue;
+        color: white;
+        padding: 10px;
+        margin: 5px 10px;
+        border-radius: 5px;
+    }
+    .table>div
+    {
+        display: inline-block;
+    }
+    #header
+    {
+        background-color: peachpuff;
+        color: black;
+        margin-bottom: 20px;
+        font-weight: 800;
+        font-size: 25;
+    }
+</style>
+
+<body>
+    <div id="leaderboard">
+        <h1>LeaderBoard</h1>
+        <div class="table" id="header">
+            <div>Rank</div>
+            <div>Username</div>
+            <div>Profit %</div>
+        </div>
+        <div class="table">
+            <div>1</div>
+            <div>chaitya</div>
+            <div>20</div>
+        </div>
+        <div class="table">
+            <div>2</div>
+            <div>Vaibhav</div>
+            <div>15</div>
+        </div>
+    </div>
+</body>
+
+</html>
