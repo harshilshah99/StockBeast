@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/historicdata.css">
+</head>
+
+<body class="body">
+    <div class="wrap">
+        <h2 class="heading">Historic data</h2>
+        <div class="search">
+            <input type="text" class="inputValue" placeholder="What are you looking for?">
+            <button type="submit" class="button">
+                <i class="fa fa-search">
+            </button>
+        </div>
+        <h3 class="stockname"></h3>
+        <h2 class="percent"></h2>
+        <div class="chart">
+            <canvas id="myChart" width=250 height=250></canvas>
+        </div>
+    </div>
+
+</body>
+<script>
+    var inputValue = document.querySelector('.inputValue')
+    var percent = document.querySelector('.percent')
+    var button = document.querySelector('.button')
+    var stockname = document.querySelector('.stockname')
+    button.addEventListener('click', function () {
+        fetch('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=' + inputValue.value + '.BSE&interval=5min&apikey=GHWBZJH9OONTQ62K')
+
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+
+                // Making two array for xaxis and yaxis of graph
+
+                const pricearr = [];
+                const timearr = [];
+                var curr = data['Time Series (Daily)']['2021-11-20'];
+                for (let i = 16; i < 31; ++i) {
+                    if (i < 10) {
+                        if (data['Time Series (Daily)']['2021-11-0' + i] == undefined) {
+                            continue;
+                        } else {
+                            console.log(data['Time Series (Daily)']['2021-11-0' + i]['4. close']);
+                            console.log('2021-11-0' + i);
+                            timearr.push('2021-11-0' + i);
+                            pricearr.push(data['Time Series (Daily)']['2021-11-0' + i]['4. close']);
+                        }
+                    } else {
+                        if (data['Time Series (Daily)']['2021-11-' + i] == undefined) {
+                            continue;
+                        } else {
+                            console.log(data['Time Series (Daily)']['2021-11-' + i]['4. close']);
+                            console.log('2021-11-' + i);
+                            timearr.push('2021-11-' + i);
+                            pricearr.push(data['Time Series (Daily)']['2021-11-' + i]['4. close']);
+                        }
+
+                    }
+                }
+                for (let i = 1; i < 31; ++i) {
+                    if (i < 10) {
+                        if (data['Time Series (Daily)']['2021-12-0' + i] == undefined) {
+                            continue;
+                        } else {
+                            console.log(data['Time Series (Daily)']['2021-12-0' + i]['4. close']);
+                            console.log('2021-12-0' + i);
+                            timearr.push('2021-12-0' + i);
+                            pricearr.push(data['Time Series (Daily)']['2021-12-0' + i]['4. close']);
+                        }
+                    } else {
+                        if (data['Time Series (Daily)']['2021-12-' + i] == undefined) {
+                            continue;
+                        } else {
+                            console.log(data['Time Series (Daily)']['2021-12-' + i]['4. close']);
+                            console.log('2021-12-' + i);
+                            timearr.push('2021-12-' + i);
+                            pricearr.push(data['Time Series (Daily)']['2021-12-' + i]['4. close']);
+                        }
+
+                    }
+                }
+                for (let i = 1; i < 31; ++i) {
+                    if (i < 10) {
+                        if (data['Time Series (Daily)']['2022-01-0' + i] == undefined) {
+                            continue;
+                        } else {
+                            console.log(data['Time Series (Daily)']['2022-01-0' + i]['4. close']);
+                            console.log('2022-01-0' + i);
+                            timearr.push('2022-01-0' + i);
+                            pricearr.push(data['Time Series (Daily)']['2022-01-0' + i]['4. close']);
+                        }
+                    } else {
+                        if (data['Time Series (Daily)']['2022-01-' + i] == undefined) {
+                            continue;
+                        } else {
+                            console.log(data['Time Series (Daily)']['2022-01-' + i]['4. close']);
+                            console.log('2022-01-' + i);
+                            timearr.push('2022-01-' + i);
+                            pricearr.push(data['Time Series (Daily)']['2022-01-' + i]['4. close']);
+                        }
+
+                    }
+                }
+                for (let i = 1; i < 31; ++i) {
+                    if (i < 10) {
+                        if (data['Time Series (Daily)']['2022-02-0' + i] == undefined) {
+                            continue;
+                        } else {
+                            console.log(data['Time Series (Daily)']['2022-02-0' + i]['4. close']);
+                            console.log('2022-02-0' + i);
+                            timearr.push('2022-02-0' + i);
+                            pricearr.push(data['Time Series (Daily)']['2022-02-0' + i]['4. close']);
+                        }
+                    } else {
+                        if (data['Time Series (Daily)']['2022-02-' + i] == undefined) {
+                            continue;
+                        } else {
+                            console.log(data['Time Series (Daily)']['2022-02-' + i]['4. close']);
+                            console.log('2022-02-' + i);
+                            timearr.push('2022-02-' + i);
+                            pricearr.push(data['Time Series (Daily)']['2022-02-' + i]['4. close']);
+                        }
+
+                    }
+                }
+                for (let i = 1; i < 32; ++i) {
+
+                    if (i < 10) {
+                        if (data['Time Series (Daily)']['2022-03-0' + i] == undefined) {
+                            continue;
+                        } else {
+                            console.log(data['Time Series (Daily)']['2022-03-0' + i]['4. close']);
+                            console.log('2022-03-0' + i);
+                            timearr.push('2022-03-0' + i);
+                            pricearr.push(data['Time Series (Daily)']['2022-03-0' + i]['4. close']);
+                        }
+                    } else {
+                        if (data['Time Series (Daily)']['2022-03-' + i] == undefined) {
+                            continue;
+                        } else {
+                            console.log(data['Time Series (Daily)']['2022-03-' + i]['4. close']);
+                            console.log('2022-03-' + i);
+                            timearr.push('2022-03-' + i);
+                            pricearr.push(data['Time Series (Daily)']['2022-03-' + i]['4. close']);
+                        }
+
+                    }
+                }
+                for (let i = 1; i < 31; ++i) {
+
+
+                    if (i < 10) {
+                        if (data['Time Series (Daily)']['2022-04-0' + i] == undefined) {
+                            continue;
+                        } else {
+                            console.log(data['Time Series (Daily)']['2022-04-0' + i]['4. close']);
+                            console.log('2022-04-0' + i);
+                            timearr.push('2022-04-0' + i);
+                            pricearr.push(data['Time Series (Daily)']['2022-04-0' + i]['4. close']);
+                        }
+                    } else {
+                        if (data['Time Series (Daily)']['2022-04-' + i] == undefined) {
+                            continue;
+                        } else {
+                            console.log(data['Time Series (Daily)']['2022-04-' + i]['4. close']);
+                            console.log('2022-04-' + i);
+                            timearr.push('2022-04-' + i);
+                            pricearr.push(data['Time Series (Daily)']['2022-04-' + i]['4. close']);
+                        }
+
+                    }
+                }
+
+                console.log(curr);
+
+                //giving colorcoding
+
+                var colorcode = 'rgba(0,128,0,1)';
+
+                var color = (pricearr.slice(-1)[0] - pricearr[0]);
+                if (color > 0) {
+                    colorcode = 'rgba(0,128,0,1)';
+                } else {
+                    colorcode = 'rgba(200,0,0,1)';
+                }
+
+                // calculating percentage change
+
+                var stockn = inputValue.value;
+                stockname.innerHTML = stockn;
+                var percentchange = (color * 100) / pricearr[0];
+                if (percentchange > 0) {
+                    percent.innerHTML = '+ ' + percentchange.toFixed(2) + ' %';
+                    percent.style.color = 'rgba(0,128,0,1)';
+
+                } else {
+                    percent.innerHTML = percentchange.toFixed(2) + ' %';
+
+                    percent.style.color = 'rgba(200,0,0,1)';
+                }
+
+                // chart of the stock
+
+                const number = 3650;
+                const ctx = document.getElementById('myChart');
+                const xlabels = timearr;
+                const myChart = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: xlabels,
+                        datasets: [{
+
+                            label: 'historic graph',
+                            data: pricearr,
+                            backgroundColor: [
+                                colorcode,
+
+                            ],
+                            borderColor: [
+                                colorcode,
+
+                            ],
+                            borderWidth: 2,
+                            tension: 0.4,
+                            pointRadius: 0
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            x: {
+
+                                grid: {
+                                    display: false
+                                }
+                            },
+                            y: {
+                                grid: { display: false },
+                                suggestedMin: number,
+                            }
+                        }
+                    }
+                });
+
+            })
+    });
+
+</script>
+
+</html>
