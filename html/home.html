@@ -1,281 +1,339 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>StockBeast</title>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lobster&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lobster&display=swap"
+      rel="stylesheet"
+    />
 
     <style>
-        * {
-            border: 0;
-            margin: 0;
+      * {
+        border: 0;
+        margin: 0;
+      }
+
+      #loading {
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        background: black
+          /* url('https://niftyxperts.com/wp-content/uploads/2017/01/nifty-bull.gif') */
+          no-repeat center;
+        z-index: 99999;
+      }
+
+      #preloadergif {
+        height: 10rem;
+        position: relative;
+        justify-content: center;
+        justify-items: center;
+        text-align: center;
+        align-items: center;
+        margin-top: 15rem;
+        margin-left: 33rem;
+      }
+
+      body {
+        background-image: url("https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        background-color: black;
+        font-family: "Open Sans", sans-serif;
+      }
+
+      #navbar {
+        list-style-type: none;
+        display: grid;
+        grid-template-columns: auto auto auto auto auto auto auto;
+        justify-content: space-evenly;
+        background-color: rgb(34 73 148);
+        color: white;
+        padding: 2vh 0vh;
+        font-size: 4vh;
+        box-sizing: border-box;
+      }
+
+      #navbar > div {
+        font-family: "Open Sans", sans-serif;
+        display: inline-block;
+        padding: 1vw 3vw;
+        transition-duration: 0.5s;
+        font-size: 1.5rem;
+      }
+
+      #navbar > div:hover {
+        transition-duration: 0.5s;
+        color: green;
+        border-radius: 10px;
+      }
+
+      #welcome {
+        text-align: center;
+      }
+
+      #divWelcome {
+        grid-template-rows: auto auto auto;
+        grid-template-columns: auto;
+        justify-content: center;
+        margin: auto auto;
+        color: white;
+        text-align: center;
+        font-family: "Open Sans", sans-serif;
+        background-color: rgba(26, 27, 26, 92%);
+        margin-top: 5rem;
+        padding: 2rem;
+        width: 40%;
+      }
+
+      #welcome {
+        color: white;
+        width: 80vw;
+        margin: 5vh auto;
+        padding: 3vh;
+        border-radius: 15px;
+        font-size: 40px;
+        text-shadow: 2px 2px 2px white;
+      }
+
+      #legend {
+        font-family: "Open Sans", sans-serif;
+        color: white;
+      }
+
+      #quotes {
+        color: white;
+        width: 48vw;
+        margin: 4vh auto;
+        padding: 6vh;
+        border-radius: 15px;
+        font-size: 25px;
+        font-family: "Open Sans", sans-serif;
+        background-color: #303535f5;
+        font-weight: 300;
+        transition-duration: 0.5s;
+      }
+
+      #author {
+        display: block;
+        text-align: right;
+        font-size: 25px;
+      }
+
+      #loginSec {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: auto;
+        justify-content: center;
+        margin-top: 7rem;
+      }
+
+      #loginSec > button {
+        font-size: 30px;
+        padding: 2vh 5vw;
+        margin: 0 10vw;
+        border-radius: 20px;
+        border: none;
+        font-family: "Open Sans", sans-serif;
+        background-color: rgb(34 73 148);
+        color: white;
+        transition-duration: 0.5s;
+      }
+
+      .wrapper {
+        height: 6vh;
+        /*This part is important for centering*/
+        display: flex;
+        padding-top: 5rem;
+
+        justify-content: center;
+      }
+
+      .typing-demo {
+        width: 42ch;
+        animation: typing 2s steps(42), blink 0.5s step-end infinite alternate;
+        white-space: nowrap;
+        overflow: hidden;
+        border-right: 3px solid;
+        font-family: monospace;
+        font-size: 2.5em;
+        color: white;
+      }
+
+      @keyframes typing {
+        from {
+          width: 0;
         }
+      }
 
-        #loading {
-            width: 100%;
-            height: 100vh;
-            position: fixed;
-            background: black
-                /* url('https://niftyxperts.com/wp-content/uploads/2017/01/nifty-bull.gif') */
-                no-repeat center;
-            z-index: 99999;
+      @keyframes blink {
+        50% {
+          border-color: transparent;
         }
+      }
 
-        #preloadergif {
-            height: 10rem;
-            position: relative;
-            justify-content: center;
-            justify-items: center;
-            text-align: center;
-            align-items: center;
-            margin-top: 15rem;
-            margin-left: 33rem;
-        }
+      .nav {
+        color: white;
+        text-decoration: none;
+        font-family: "Open Sans", sans-serif;
+      }
 
-        body {
-            background-image: url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80');
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-attachment: fixed;
-            background-color: black;
-            font-family: 'Open Sans', sans-serif;
+      .nav:hover {
+        transition-duration: 0.5s;
+        color: green;
+        border-radius: 10px;
+      }
 
-        }
+      .nifty {
+        font-size: large;
+        padding: 0.8rem;
+        font-weight: 600;
+      }
 
-        #navbar {
-            list-style-type: none;
-            display: grid;
-            grid-template-columns: auto auto auto auto auto auto auto;
-            justify-content: space-evenly;
-            background-color: rgb(34 73 148);
-            color: white;
-            padding: 2vh 0vh;
-            font-size: 4vh;
-            box-sizing: border-box;
+      .previousclose {
+        font-size: large;
+        padding: 0.8rem;
+        font-weight: 600;
+      }
 
-        }
+      .currentclose {
+        font-size: large;
+        padding: 0.8rem;
+        font-weight: 600;
+      }
 
-        #navbar>div {
-            font-family: 'Open Sans', sans-serif;
-            display: inline-block;
-            padding: 1vw 3vw;
-            transition-duration: 0.5s;
-            font-size: 1.5rem;
-        }
+      .open-close {
+        font-size: larger;
+        padding: 0.8rem;
+        font-weight: 600;
+      }
 
-        #navbar>div:hover {
+      .footer {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        /* background-color: rgba(26, 27, 26, 92%); */
+        background-color: rgb(34 73 148);
+        margin-top: 15rem;
+      }
 
-            transition-duration: 0.5s;
-            color: green;
-            border-radius: 10px;
-        }
+      .last {
+        padding: 1rem;
+      }
 
-        #welcome {
-            text-align: center;
-
-        }
-
-        #divWelcome {
-            grid-template-rows: auto auto auto;
-            grid-template-columns: auto;
-            justify-content: center;
-            margin: auto auto;
-            color: white;
-            text-align: center;
-            font-family: 'Open Sans', sans-serif;
-            background-color: rgba(26, 27, 26, 92%);
-            margin-top: 5rem;
-            padding: 2rem;
-            width: 40%;
-
-        }
-
-        #welcome {
-            color: white;
-            width: 80vw;
-            margin: 5vh auto;
-            padding: 3vh;
-            border-radius: 15px;
-            font-size: 40px;
-            text-shadow: 2px 2px 2px white;
-        }
-
-        #legend {
-            font-family: 'Open Sans', sans-serif;
-            color: white;
-        }
-
-        #quotes {
-            color: white;
-            width: 48vw;
-            margin: 4vh auto;
-            padding: 6vh;
-            border-radius: 15px;
-            font-size: 25px;
-            font-family: 'Open Sans', sans-serif;
-            background-color: #303535f5;
-            font-weight: 300;
-            transition-duration: 0.5s;
-        }
-
-        #author {
-            display: block;
-            text-align: right;
-            font-size: 25px;
-        }
-
-
-        #loginSec {
-            display: grid;
-            grid-template-columns: auto auto;
-            grid-template-rows: auto;
-            justify-content: center;
-            margin-top: 7rem;
-        }
-
-        #loginSec>button {
-            font-size: 30px;
-            padding: 2vh 5vw;
-            margin: 0 10vw;
-            border-radius: 20px;
-            border: none;
-            font-family: 'Open Sans', sans-serif;
-            background-color: rgb(34 73 148);
-            color: white;
-            transition-duration: 0.5s;
-        }
-
-        .wrapper {
-            height: 6vh;
-            /*This part is important for centering*/
-            display: flex;
-            padding-top: 5rem;
-
-            justify-content: center;
-        }
-
-        .typing-demo {
-            width: 42ch;
-            animation: typing 2s steps(42), blink .5s step-end infinite alternate;
-            white-space: nowrap;
-            overflow: hidden;
-            border-right: 3px solid;
-            font-family: monospace;
-            font-size: 2.5em;
-            color: white;
-        }
-
-        @keyframes typing {
-            from {
-                width: 0
-            }
-        }
-
-        @keyframes blink {
-            50% {
-                border-color: transparent
-            }
-        }
-
-        .nav {
-            color: white;
-            text-decoration: none;
-            font-family: 'Open Sans', sans-serif;
-        }
-
-        .nav:hover {
-            transition-duration: 0.5s;
-            color: green;
-            border-radius: 10px;
-        }
-
-        .nifty {
-            font-size: large;
-            padding: 0.8rem;
-            font-weight: 600;
-        }
-
-        .previousclose {
-            font-size: large;
-            padding: 0.8rem;
-            font-weight: 600;
-        }
-
-        .currentclose {
-            font-size: large;
-            padding: 0.8rem;
-            font-weight: 600;
-        }
-
-        .open-close {
-            font-size: larger;
-            padding: 0.8rem;
-            font-weight: 600;
-        }
+      .center {
+        text-align: center;
+        justify-content: center;
+        padding: 10px;
+        /* background-color: rgba(26, 27, 26, 92%); */
+        background-color: rgb(34 73 148);
+        color: white;
+        font-family: "Open Sans", sans-serif;
+        font-weight: 600;
+      }
     </style>
+  </head>
 
-</head>
-
-<body onload="preloader()">
+  <body onload="preloader()">
     <div id="loading">
-        <img id="preloadergif" src="https://niftyxperts.com/wp-content/uploads/2017/01/nifty-bull.gif">
+      <img
+        id="preloadergif"
+        src="https://niftyxperts.com/wp-content/uploads/2017/01/nifty-bull.gif"
+      />
     </div>
     <nav id="navbar">
-        <div id="play"><a class="nav" href="#">Play</a></div>
-        <div id="analysis"><a class="nav" href="stock.html">Stock Analysis</a></div>
-        <div id="friends"><a class="nav" href="#">Friends</a></div>
-        <div id="access"><a class="nav" href="#">Direct Access</a></div>
-        <div id="help"><a class="nav" href="#">Help</a></div>
-        <div id="news"><a class="nav" href="stocknews.html">News</a></div>
-        <div id="login"><a class="nav" href="stocknews.html">Login</a></div>
+      <div id="play"><a class="nav" href="#">Play</a></div>
+      <div id="analysis">
+        <a class="nav" href="stock.html">Stock Analysis</a>
+      </div>
+      <div id="friends"><a class="nav" href="#">Friends</a></div>
+      <div id="access"><a class="nav" href="#">Direct Access</a></div>
+      <div id="help"><a class="nav" href="#">Help</a></div>
+      <div id="news"><a class="nav" href="stocknews.html">News</a></div>
+      <div id="login"><a class="nav" href="stocknews.html">Login</a></div>
     </nav>
 
     <div class="wrapper">
-        <div class="typing-demo">
-            Welcome to StockBeast! - a game of legends
-        </div>
-
+      <div class="typing-demo">Welcome to StockBeast! - a game of legends</div>
     </div>
     <div id="divWelcome">
-        <!-- <h1 id="welcome">Welcome to StockBeast! - <span id="legend">a game of legends</span></h1> -->
-        <p class="open-close">Markets are Closed for the day</p>
-        <p class="nifty"></p>
-        <p class="previousclose"></p>
-        <p class="currentclose"></p>
-
+      <!-- <h1 id="welcome">Welcome to StockBeast! - <span id="legend">a game of legends</span></h1> -->
+      <p class="open-close">Markets are Closed for the day</p>
+      <p class="nifty"></p>
+      <p class="previousclose"></p>
+      <p class="currentclose"></p>
     </div>
-
-
-
-</body>
-<script>
-    var preload = document.getElementById('loading');
+  </body>
+  <script>
+    var preload = document.getElementById("loading");
     function preloader() {
-        preload.style.display = 'none';
+      preload.style.display = "none";
     }
-    var nifty = document.querySelector('.nifty')
-    var previousclose = document.querySelector('.previousclose')
-    var currentclose = document.querySelector('.currentclose')
-    window.addEventListener('load', () => {
-        fetch('https://stock-market-analyser-backend.herokuapp.com/stock/indian/index/tcs')
-            .then(response => response.json())
-            .then(data => {
-                console.log(data);
-                var name = (data['name']);
-                var close = (data['current_close']);
-                var prevclose = (data['prev_close']);
-                nifty.innerHTML = name;
-                previousclose.innerHTML = 'Previous close - ' + prevclose;
-                currentclose.innerHTML = 'Current close - ' + close;
-
-
-            })
-    })
-
-</script>
-
+    var nifty = document.querySelector(".nifty");
+    var previousclose = document.querySelector(".previousclose");
+    var currentclose = document.querySelector(".currentclose");
+    window.addEventListener("load", () => {
+      fetch(
+        "https://stock-market-analyser-backend.herokuapp.com/stock/indian/index/tcs"
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+          var name = data["name"];
+          var close = data["current_close"];
+          var prevclose = data["prev_close"];
+          nifty.innerHTML = name;
+          previousclose.innerHTML = "Previous close - " + prevclose;
+          currentclose.innerHTML = "Current close - " + close;
+        });
+    });
+  </script>
+  <footer class="footer">
+    <div class="last">
+      <a href="https://facebook.com"
+        ><img
+          width="30px"
+          height="30px"
+          src="/image/facebook.jpg"
+          alt="facebook logo"
+      /></a>
+    </div>
+    <div class="last">
+      <a href="https://github.com/harshilshah99/StockBeast"
+        ><img
+          width="30px"
+          height="30px"
+          src="/image/githublogo.png"
+          alt="github logo"
+      /></a>
+    </div>
+    <div class="last">
+      <a href="https://instagram.com"
+        ><img
+          width="30px"
+          height="30px"
+          src="/image/instagram.jpg"
+          alt="facebook logo"
+      /></a>
+    </div>
+    <div class="last">
+      <a href="https://twitter.com"
+        ><img
+          width="30px"
+          height="30px"
+          src="/image/twitter.jpg"
+          alt="facebook logo"
+      /></a>
+    </div>
+  </footer>
+  <footer>
+    <div class="center">
+      Copyright &copy; www.StockBeast.com All rights reserved!
+    </div>
+  </footer>
 </html>
