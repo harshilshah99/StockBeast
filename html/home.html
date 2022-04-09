@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/homepage.css">
+    <meta name="keywords" content="stock, stockMarket, stockgame">
+    <title>StockBeast</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lobster&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="image/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="image/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="image/favicon/favicon-16x16.png">
+    <link rel="manifest" href="image/favicon/site.webmanifest">
+
+    <style>
+        * {
+            border: 0;
+            margin: 0;
+        }
+
+        body {
+            background-image: url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            background-color: black;
+            font-family: 'Open Sans', sans-serif;
+
+        }
+
+        #navbar {
+            list-style-type: none;
+            display: grid;
+            grid-template-columns: auto auto auto auto auto auto;
+            justify-content: space-evenly;
+            background-color: rgb(34 73 148);
+            color: white;
+            padding: 2vh 0vh;
+            font-size: 4vh;
+            box-sizing: border-box;
+
+        }
+
+        #navbar>div {
+            font-family: 'Open Sans', sans-serif;
+            display: inline-block;
+            padding: 1vw 3vw;
+            transition-duration: 0.5s;
+        }
+
+        #navbar>div:hover {
+
+            transition-duration: 0.5s;
+            color: green;
+            border-radius: 10px;
+        }
+
+        #welcome {
+            text-align: center;
+
+        }
+
+        #divWelcome {
+            grid-template-rows: auto auto auto;
+            grid-template-columns: auto;
+            justify-content: center;
+            margin: auto auto;
+
+        }
+
+        #welcome {
+            color: white;
+            width: 80vw;
+            margin: 5vh auto;
+            padding: 3vh;
+            border-radius: 15px;
+            font-size: 40px;
+            text-shadow: 2px 2px 2px white;
+        }
+
+        #legend {
+            font-family: 'Open Sans', sans-serif;
+            color: white;
+        }
+
+        #quotes {
+            color: white;
+            width: 48vw;
+            margin: 4vh auto;
+            padding: 6vh;
+            border-radius: 15px;
+            font-size: 25px;
+            font-family: 'Open Sans', sans-serif;
+            background-color: #303535f5;
+            font-weight: 300;
+            transition-duration: 0.5s;
+        }
+
+        #author {
+            display: block;
+            text-align: right;
+            font-size: 25px;
+        }
+
+
+        #loginSec {
+            display: grid;
+            grid-template-columns: auto auto;
+            grid-template-rows: auto;
+            justify-content: center;
+            margin-top: 7rem;
+        }
+
+        #loginSec>button {
+            font-size: 30px;
+            padding: 2vh 5vw;
+            margin: 0 10vw;
+            border-radius: 20px;
+            border: none;
+            font-family: 'Open Sans', sans-serif;
+            background-color: rgb(34 73 148);
+            color: white;
+            transition-duration: 0.5s;
+        }
+
+        .wrapper {
+            height: 6vh;
+            /*This part is important for centering*/
+            display: flex;
+            padding-top: 5rem;
+
+            justify-content: center;
+        }
+
+        .typing-demo {
+            width: 42ch;
+            animation: typing 2s steps(42), blink .5s step-end infinite alternate;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 3px solid;
+            font-family: monospace;
+            font-size: 2.5em;
+            color: white;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0
+            }
+        }
+
+        @keyframes blink {
+            50% {
+                border-color: transparent
+            }
+        }
+        .nav{
+            color: white;
+            text-decoration: none;
+            font-family: 'Open Sans', sans-serif;
+        }
+        .nav:hover{
+            transition-duration: 0.5s;
+            color: green;
+            border-radius: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <nav id="navbar">
+        <div id="play"><a class="nav" href="#">Play</a></div>
+        <div id="analysis"><a class="nav" href="stock.html">Stock Analysis</a></div>
+        <div id="friends"><a class="nav" href="#">Friends</a></div>
+        <div id="access"><a class="nav" href="#">Direct Access</a></div>
+        <div id="help"><a class="nav" href="#">Help</a></div>
+        <div id="news"><a class="nav" href="stocknews.html">News</a></div>
+    </nav>
+
+    <div class="wrapper">
+        <div class="typing-demo">
+            Welcome to StockBeast! - a game of legends
+        </div>
+
+    </div>
+    <div id="divWelcome">
+        <!-- <h1 id="welcome">Welcome to StockBeast! - <span id="legend">a game of legends</span></h1> -->
+        <p id="quotes" title="a quote which might help in your trading journey">Be fearful when others are greedy. Be
+            greedy when others are fearful.</p><cite id="author">Warren Buffet</cite></p>
+
+    </div>
+    <div id="loginSec">
+        <button type="button" id="login">Login</button>
+        <button type="button" id="register">Register</button>
+    </div>
+
+    <script src="script/script.js"></script>
+
+</body>
+
+</html>
