@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/ContactUs.css" />
+  </head>
+  <body onload="preloader()">
+    <div id="loading">
+      <img
+        id="preloadergif"
+        src="https://niftyxperts.com/wp-content/uploads/2017/01/nifty-bull.gif"
+      />
+    </div>
+
+    <nav id="navbar">
+      <div id="play"><a class="nav" href="#">Play</a></div>
+      <div id="analysis">
+        <a class="nav" href="stock.html">Stock Analysis</a>
+      </div>
+      <div id="friends"><a class="nav" href="#">Friends</a></div>
+      <div id="access"><a class="nav" href="#">Direct Access</a></div>
+      <div id="help"><a class="nav" href="#">Help</a></div>
+      <div id="news"><a class="nav" href="stocknews.html">News</a></div>
+    </nav>
+    <div class="wrapper">
+      <div class="title">
+        <h1>contact us form</h1>
+      </div>
+      <div class="contact-form">
+        <div class="input-fields">
+          <input type="text" class="input" placeholder="Name" />
+          <input type="text" class="input" placeholder="Email Address" />
+          <input type="text" class="input" placeholder="Phone" />
+          <input type="text" class="input" placeholder="Subject" />
+        </div>
+        <div class="msg">
+          <textarea placeholder="Message"></textarea>
+          <div class="btn">send</div>
+        </div>
+      </div>
+    </div>
+    <script>
+      var preload = document.getElementById("loading");
+      function preloader() {
+        preload.style.display = "none";
+      }
+    </script>
+  </body>
+</html>
