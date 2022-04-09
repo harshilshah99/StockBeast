@@ -11,7 +11,10 @@
     <link rel="stylesheet" href="./css/historicdata.css">
 </head>
 
-<body class="body">
+<body class="body" onload="preloader()">
+    <div id="loading">
+        <img id="preloadergif" src="https://niftyxperts.com/wp-content/uploads/2017/01/nifty-bull.gif">
+    </div>
     <div class="wrap">
         <h2 class="heading">Historic data</h2>
         <div class="search">
@@ -253,6 +256,13 @@
 
             })
     });
+
+    
+            var preload=document.getElementById('loading');
+            function preloader(){
+                preload.style.display = 'none';
+        }
+
 
 </script>
 
