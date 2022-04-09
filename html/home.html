@@ -5,14 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/homepage.css">
-    <meta name="keywords" content="stock, stockMarket, stockgame">
+
     <title>StockBeast</title>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lobster&display=swap" rel="stylesheet">
-    <link rel="apple-touch-icon" sizes="180x180" href="image/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="image/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="image/favicon/favicon-16x16.png">
-    <link rel="manifest" href="image/favicon/site.webmanifest">
 
     <style>
         * {
@@ -21,24 +16,25 @@
         }
 
         #loading {
-  width: 100%;
-  height: 100vh;
-  position: fixed;
-  background: black
-    /* url('https://niftyxperts.com/wp-content/uploads/2017/01/nifty-bull.gif') */
-    no-repeat center;
-  z-index: 99999;
-}
-#preloadergif {
-  height: 10rem;
-  position: relative;
-  justify-content: center;
-  justify-items: center;
-  text-align: center;
-  align-items: center;
-  margin-top: 15rem;
-  margin-left: 33rem;
-}
+            width: 100%;
+            height: 100vh;
+            position: fixed;
+            background: black
+                /* url('https://niftyxperts.com/wp-content/uploads/2017/01/nifty-bull.gif') */
+                no-repeat center;
+            z-index: 99999;
+        }
+
+        #preloadergif {
+            height: 10rem;
+            position: relative;
+            justify-content: center;
+            justify-items: center;
+            text-align: center;
+            align-items: center;
+            margin-top: 15rem;
+            margin-left: 33rem;
+        }
 
         body {
             background-image: url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80');
@@ -53,7 +49,7 @@
         #navbar {
             list-style-type: none;
             display: grid;
-            grid-template-columns: auto auto auto auto auto auto;
+            grid-template-columns: auto auto auto auto auto auto auto;
             justify-content: space-evenly;
             background-color: rgb(34 73 148);
             color: white;
@@ -68,6 +64,7 @@
             display: inline-block;
             padding: 1vw 3vw;
             transition-duration: 0.5s;
+            font-size: 1.5rem;
         }
 
         #navbar>div:hover {
@@ -87,6 +84,13 @@
             grid-template-columns: auto;
             justify-content: center;
             margin: auto auto;
+            color: white;
+            text-align: center;
+            font-family: 'Open Sans', sans-serif;
+            background-color: rgba(26, 27, 26, 92%);
+            margin-top: 5rem;
+            padding: 2rem;
+            width: 40%;
 
         }
 
@@ -176,26 +180,50 @@
                 border-color: transparent
             }
         }
-        .nav{
+
+        .nav {
             color: white;
             text-decoration: none;
             font-family: 'Open Sans', sans-serif;
         }
-        .nav:hover{
+
+        .nav:hover {
             transition-duration: 0.5s;
             color: green;
             border-radius: 10px;
+        }
+
+        .nifty {
+            font-size: large;
+            padding: 0.8rem;
+            font-weight: 600;
+        }
+
+        .previousclose {
+            font-size: large;
+            padding: 0.8rem;
+            font-weight: 600;
+        }
+
+        .currentclose {
+            font-size: large;
+            padding: 0.8rem;
+            font-weight: 600;
+        }
+
+        .open-close {
+            font-size: larger;
+            padding: 0.8rem;
+            font-weight: 600;
         }
     </style>
 
 </head>
 
 <body onload="preloader()">
-
     <div id="loading">
         <img id="preloadergif" src="https://niftyxperts.com/wp-content/uploads/2017/01/nifty-bull.gif">
     </div>
-
     <nav id="navbar">
         <div id="play"><a class="nav" href="#">Play</a></div>
         <div id="analysis"><a class="nav" href="stock.html">Stock Analysis</a></div>
@@ -203,6 +231,7 @@
         <div id="access"><a class="nav" href="#">Direct Access</a></div>
         <div id="help"><a class="nav" href="#">Help</a></div>
         <div id="news"><a class="nav" href="stocknews.html">News</a></div>
+        <div id="login"><a class="nav" href="stocknews.html">Login</a></div>
     </nav>
 
     <div class="wrapper">
@@ -213,22 +242,40 @@
     </div>
     <div id="divWelcome">
         <!-- <h1 id="welcome">Welcome to StockBeast! - <span id="legend">a game of legends</span></h1> -->
-        <p id="quotes" title="a quote which might help in your trading journey">Be fearful when others are greedy. Be
-            greedy when others are fearful.</p><cite id="author">Warren Buffet</cite></p>
+        <p class="open-close">Markets are Closed for the day</p>
+        <p class="nifty"></p>
+        <p class="previousclose"></p>
+        <p class="currentclose"></p>
 
     </div>
-    <div id="loginSec">
-        <button type="button" id="login">Login</button>
-        <button type="button" id="register">Register</button>
-    </div>
 
-    <script src="script/script.js"></script>
-    <script>
-        var preload=document.getElementById('loading');
-            function preloader(){
-                preload.style.display = 'none';
-        }
-    </script>
+
+
 </body>
+<script>
+    var preload = document.getElementById('loading');
+    function preloader() {
+        preload.style.display = 'none';
+    }
+    var nifty = document.querySelector('.nifty')
+    var previousclose = document.querySelector('.previousclose')
+    var currentclose = document.querySelector('.currentclose')
+    window.addEventListener('load', () => {
+        fetch('https://stock-market-analyser-backend.herokuapp.com/stock/indian/index/tcs')
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                var name = (data['name']);
+                var close = (data['current_close']);
+                var prevclose = (data['prev_close']);
+                nifty.innerHTML = name;
+                previousclose.innerHTML = 'Previous close - ' + prevclose;
+                currentclose.innerHTML = 'Current close - ' + close;
+
+
+            })
+    })
+
+</script>
 
 </html>

@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+        body {
+            background: #f2f2f2;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .search {
+        
+            width: 100%;
+            justify-content: center;
+            display: flex;
+        }
+
+        .inputValue {
+    width: 25%;
+    border: 3px solid #ffffff;
+    font-weight: 550;
+    font-size: 1rem;
+    border-right: none;
+    padding: 5px;
+    height: 20px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: #355de4;
+
+}
+
+.inputValue:focus {
+
+    color: black;
+}
+@media (max-width:460px) {
+    .inputValue {
+        width: 50%;
+    }
+}
+
+        .inputValue1 {
+    width: 25%;
+    border: 3px solid #ffffff;
+    font-weight: 550;
+    font-size: 1rem;
+    border-right: none;
+    padding: 5px;
+    height: 20px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: #355de4;
+
+}
+
+.inputValue1:focus {
+
+    color: black;
+}
+@media (max-width:460px) {
+    .inputValue1 {
+        width: 50%;
+    }
+}
+      
+
+        .button {
+    width: 40px;
+    height: 36px;
+    border: 1px solid #355de4;
+    background: #355de4;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+        .button1 {
+            width: 40px;
+    height: 36px;
+    border: 1px solid #355de4;
+    background: #355de4;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+        }
+
+        /*Resize the wrap to see the search bar change!*/
+        .wrap {
+            width: 99%;
+            position: absolute;
+            
+           
+        }
+        @media (max-width:460px) {
+    .wrap {
+        width: 107%;
+    }
+}
+        .content{
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+            color: white;
+        }
+
+        .heading {
+            text-align: center;
+            color: white;
+        }
+        #myChart{
+            height: 300px;
+            width: 300px;
+         
+        }
+        .chart {
+    height: 400px;
+    width: 500px;
+    padding-left: 28rem;
+    padding-top: 2rem;
+    padding-bottom: 1.5rem;
+}
+
+@media (max-width:460px) {
+    .chart {
+        height: 300px;
+        width: 400px;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        padding-top: 1rem;
+    }
+}
+
+        .details1{
+            text-align: center;
+            color: white;
+        }
+        .body{
+            background-color: black;
+        }
+        .percent{
+            color: white;
+        }
+        .historical{
+            color: white;
+            float: right;
+            margin-right: 2rem;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            background-color: #355de4;
+        }
+        .historical a{
+            text-decoration: none;
+            color: white;
+        }
+        .totalprice{
+            color: white;
+            text-align: center;
+            
+            
+        }
+        .buy{
+            width: 7%;
+            text-align: center;
+            padding: 1rem;
+            background-color: green;
+            border: none;
+            border-radius: 10px;
+            margin-right: 1rem;
+            color: white;
+            font-weight: 700;
+            font-size: 1rem;
+            font-family:'Open Sans', sans-serif ;
+            cursor: pointer;
+            
+        }
+        .sell{
+            width: 7%;
+            text-align: center;
+            padding: 1rem;
+            background-color: red;
+            border: none;
+            border-radius: 10px;
+            margin-left: 1rem;
+            color: white;
+            font-weight: 700;
+            font-size: 1rem;
+            font-family:'Open Sans', sans-serif ;
+            cursor: pointer;
+        }
+        .quantity{
+            margin-top: 2rem;
+            padding: 0.5rem;
+            font-size: large;
+            font-family:'Open Sans', sans-serif ;
+
+        }
+
+        .calculateprice{
+            margin-top: 2rem;
+            padding: 0.5rem;
+            font-size: large;
+            font-family:'Open Sans', sans-serif ;
+            font-weight: bolder;
+            cursor: pointer;
+
+        }
+        .buy-sell{
+            text-align: center;
+        }
+        .quantity-cal{
+            text-align: center;
+            
+        }
+    </style>
+</head>
+
+<body class="body">
+
+    <div class="wrap">
+        <h1 class="heading">Stock Analysis</h1>
+        <div class="historical"> <a href="historicdata.html">Historical Data</a></div>
+        <div class="search">
+        <input type="text" class="inputValue1" placeholder="Enter stock name?">
+        <button type="submit1" class="button1"><i class="fa fa-search"></i></button>
+    </div>
+    
+        <p class="details1"></p>
+        <div class="search">
+            <input type="text" class="inputValue" placeholder="What are you looking for?">
+            <button type="submit" class="button">
+                <i class="fa fa-search"></i>
+            </button>
+            
+        </div><br>
+        
+        <div class="content">
+        <h4 class="stockId"></h4>
+        <span class="price"></span><br>
+        <span class="todayopen"></span><br>
+        <span class="todayclose"></span>
+        <div>
+            <h2 class="percent"></h2>
+        </div>
+    </div>
+   <div class="buy-sell">   
+<button class="buy">BUY</button>
+<button class="sell">SELL</button>
+</div>  
+<div class="quantity-cal">
+<input class="quantity" type="number" placeholder="enter quantity">
+<button type="submit" class="calculateprice">&#x20B9;</button>
+</div>
+
+<h2 class="totalprice"></h2>
+
+</div>
+    
+
+</body>
+<script>
+    //for autosuggesting
+    
+    var button1 = document.querySelector('.button1')
+        var details1 = document.querySelector('.details1')
+        var inputValue1 = document.querySelector('.inputValue1')
+        
+         button1.addEventListener('click', function () {
+            fetch('https://stock-market-analyser-backend.herokuapp.com/stock/indian/autosuggest/' + inputValue1.value)
+            .then(response => response.json())
+        .then(data =>{
+           
+    
+            console.log(data);
+            console.log(data[0]['stock_name']);
+            console.log(data[0]['sc_id']);
+            let newsHtml="";
+    
+            for(let i=0 ; i<data.length;++i){
+                console.log(data[i]['stock_name']);
+                console.log(data[i]['sc_id']);
+                let news = `<div>
+                    <span>${data[i]['stock_name']}</span>
+                    <span>-</span>
+                    <span>${data[i]['sc_id']}</span><br>
+                </div>    
+    
+                `
+                newsHtml+= news;
+                
+                
+            
+            }
+            details1.innerHTML = newsHtml;
+        })
+    });
+    
+    
+    //for searching stock
+        var button = document.querySelector('.button')
+        var todayclose = document.querySelector('.todayclose')
+        var price = document.querySelector('.price')
+        var stockId = document.querySelector('.stockId')
+        var todayopen = document.querySelector('.todayopen')
+        var inputValue = document.querySelector('.inputValue')
+        var percent = document.querySelector('.percent')
+        button.addEventListener('click', function () {
+            //fetch('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=IDEA.BSE&interval=5min&apikey=GHWBZJH9OONTQ62K')
+            fetch('https://stock-market-analyser-backend.herokuapp.com/stock/indian/chart/' + inputValue.value)
+                //fetch('https://stock-market-analyser-backend.herokuapp.com/stock/indian/autosuggest/' + inputValue.value)
+    
+                //fetch('http://api.marketstack.com/v1/intraday?access_key=02ce5f9c91243060f28964ad9d841304&symbols=AAPL&interval=1min')
+    
+                .then(response => response.json())
+                .then(data => {
+                    var curr = data['chartActulaData'];
+                    var stockname = data['stockId'];
+                    var todaycloseValue = curr.slice(-1);
+                    var currValue = todaycloseValue[0]['value'];
+                    var openValue = curr.slice(0);
+                    var open = openValue[0]['value'];
+                    var colorcode= 'rgba(0,128,0,1)';
+                    var percentchange = ((currValue-open)*100)/open;
+                    percent.innerHTML = percentchange.toFixed(2);
+    
+                    if (percentchange > 0) {
+                        percent.innerHTML = '+ ' + percentchange.toFixed(2) + ' %';
+                        percent.style.color = 'rgba(0,128,0,1)';
+    
+                    } else {
+                        percent.innerHTML = percentchange.toFixed(2) + ' %';
+    
+                        percent.style.color = 'rgba(200,0,0,1)';
+                    }
+    
+                    var color = (currValue - open);
+                    if(color > 0){
+                        colorcode = 'rgba(0,128,0,1)';
+                    }else{
+                        colorcode = 'rgba(200,0,0,1)';
+                    }
+                    console.log(color);
+                    console.log(color);
+                    console.log(color);
+    
+                    todayclose.innerHTML = 'Close - '+ currValue;
+                    price.innerHTML = 'Curr - ' + currValue;
+                    stockId.innerHTML = stockname;
+                    todayopen.innerHTML = 'Open - ' + open;
+                    console.log(data);
+                    console.log(todaycloseValue.slice(-1));
+                    console.log(currValue);
+                    
+    
+                    const stockpricearr = []
+    
+                    for (let i = 0; i < openValue.length; ++i) {
+    
+                        console.log(openValue[i]['value']);
+                        stockpricearr.push(openValue[i]['value']);
+    
+                    }
+                    const stocktimearr = []
+    
+                    let time=9.14;
+    
+                    for (let i = 0; i < openValue.length; ++i) {
+    
+                        if((i == 45) || (i==104) || (i==163) ||(i==222) ||(i==281)||(i==340)){
+                            time = time + 0.41;
+                            stocktimearr.push(time.toFixed(2));
+                        console.log(time.toFixed(2));
+                        }
+                       
+                        time = time + 0.01;
+                        stocktimearr.push(time.toFixed(2));
+                        console.log(time.toFixed(2));
+    
+                    }
+
+                    var calculateprice = document.querySelector('.calculateprice')
+        var quantity = document.querySelector('.quantity')
+        var totalprice = document.querySelector('.totalprice')
+        var inputValue = document.querySelector('.inputValue')
+        
+         calculateprice.addEventListener('click', function () {
+            fetch('https://stock-market-analyser-backend.herokuapp.com/stock/indian/chart/' + inputValue.value)
+            .then(response => response.json())
+        .then(data =>{
+            var currValue = todaycloseValue[0]['value'];
+            console.log(currValue);
+
+            var totprice = (quantity.value)*currValue;
+            totalprice.innerHTML = 'Total Price - ' + (totprice).toFixed(2);
+    
+        })
+    });
+    
+    
+                })
+        });
+    
+    
+    
+    
+    </script>
+</html>
