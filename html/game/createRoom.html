@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="../image/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../image/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../image/favicon/favicon-16x16.png">
+    <link rel="manifest" href="../image/favicon/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+</head>
+<style>
+    body {
+        display: grid;
+        grid-template-columns: auto;
+        justify-content: center;
+        background-image: url("../../image/play.webp");
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    input
+    {
+        display: block;
+        font-size: large;
+        margin: 10px auto;
+        border-radius: 10px;
+        padding: 3px;
+        box-shadow: inset 3px 3px 2px grey;
+        padding-left: 10px;
+    }
+
+    #createroom
+    {
+        background-color: black;
+        padding: 10px 30px;
+        margin-top: 15px;
+        border-radius: 20px;
+        box-shadow: 10px 10px 4px grey;
+        border: 2px solid white;
+    }
+    #permission>input
+    {
+        display: inline-block;
+    }
+    h1
+    {
+        text-align: center;
+        color: aqua;
+    }
+    select
+    {
+        font-size: large;
+        border-radius: 10px;
+    }
+    label
+    {
+        font-size: large;
+        display: block;
+        text-align: center;
+        font-weight: bold;
+        color: azure;
+    }
+    .inline>label
+    {
+        display: inline-block;
+        margin-right: 5px;
+    }
+    #create
+    {
+        font-size: xx-large;
+        padding: 2px 5px;
+        margin-top: 20px;
+        font-weight: 800;
+        background-color: aquamarine;
+        font-family: algerian;
+        box-shadow: 3px 3px 2px grey;
+        transition-duration: 0.5s;
+    }
+    #create:hover
+    {
+        background-color: gold;
+        transition-duration: 0.5s;
+    }
+    .less
+    {
+        font-weight: 500;
+    }
+    
+</style>
+
+<body>
+    <div id="createroom">
+        <h1>Create Room</h1>
+        <form action="/POST">
+            <div>
+                <label for="roomname">Room Name:</label>
+                <input type="text" name="roomName" id="roomname" placeholder="Enter name of your room">
+            </div>
+            <div>
+                <label for="limit">Limit:</label>
+                <input type="number" name="limit" id="limit" min="5" placeholder="Enter limit of room">
+            </div>
+            <div>
+                <label for="capital">Capital:</label>
+                <input type="Number" name="capital" id="capital" max='10000000' min='10000'
+                    placeholder="Enter initial capital">
+            </div>
+            <div>
+                <label for="starttime">Starts at:</label>
+                <input type="date" name="starttime" id="starttime" placeholder="Enter start time">
+            </div>
+            <div>
+                <label for="endtime">Ends At:</label>
+                <input type="date" name="endtime" id="endtime" placeholder="Enter end time">
+            </div>
+            <div id="permission" class="inline">
+                <label> Select permission: </label>
+                <input type="radio" name="type" id="public" value="public" checked>
+                <label for="public" class="less">public</label>
+                <input type="radio" name="type" id="private" value="private">
+                <label for="private" class="less">private</label>
+            </div>
+            <div class="inline">
+                <label for="stocks">Select stocks available:</label>
+                <select name="stocks" id="stocks">
+                    <option value="sensex">sensex</option>
+                    <option value="nifty">nifty</option>
+                    <option value="all">all</option>
+                </select>
+            </div>
+            <div>
+                <input type="submit" value="Create" id="create">
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

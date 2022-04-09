@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gameroom</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="../../image/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../image/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../image/favicon/favicon-16x16.png">
+    <link rel="manifest" href="../../image/favicon/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+</head>
+<style>
+    body {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-areas: auto auto auto;
+        justify-content: center;
+        background-image: url("../../image/play.webp");
+        background-size: cover;
+        background-repeat: no-repeat;
+        
+    }
+    #room
+    {
+        background-color: black;
+        width: 50vw;
+        color: white;
+        text-align: center;
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto;
+        padding-top: 30px;
+        border-radius: 20px;
+        box-shadow: 10px 10px 4px grey;
+        border: 2px solid white;
+    }
+
+    #room>div>div{
+        display: grid;
+        grid-template-columns: auto auto auto;
+        justify-content: space-evenly;
+        background-color: darkblue;
+        padding: 5px;
+        margin: 3px 10px;
+        border-radius: 4px;
+    }
+    #room>div
+    {
+        min-height: 200px;
+    }
+    button
+    {
+        font-size: 15px;
+    }
+</style>
+
+<body>
+    <div id="room">
+        <div class="_33">
+            <h1>Past</h1>
+            <div><span>Roomname: stockslayers</span> <span id="roomId">Roomid:3254</span><button>results</button></div>
+        </div>
+        <div class="_33">
+            <h1>Ongoing</h1>
+            <div><span>Roomname: stockslayers</span> <span id="roomId">Roomid: 3254</span> <span>capital available: 2000</span><button>leave</button><span>ends at: 22/2/2022 03:00:25</span></div>
+        </div>
+        <div class="_33">
+            <h1>Upcoming</h1>
+            <div><span>Roomname: stockslayers</span> <span id="roomId">Roomid: 3254</span> <span>capital available: 200000</span><button>leave</button><span>starts at: 22/2/2022 03:00:25</span></div>
+        </div>
+    </div>
+</body>
+
+</html>
