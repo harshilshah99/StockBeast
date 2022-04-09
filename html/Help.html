@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help</title>
+    <link rel="stylesheet" href="/css/Help.css">
+</head>
+<body onload="preloader()">
+
+    <div id="loading">
+        <img id="preloadergif" src="https://niftyxperts.com/wp-content/uploads/2017/01/nifty-bull.gif">
+    </div>
+
+    <nav id="navbar">
+        <div id="play"><a class="nav" href="#">Play</a></div>
+        <div id="analysis"><a class="nav" href="stock.html">Stock Analysis</a></div>
+        <div id="friends"><a class="nav" href="#">Friends</a></div>
+        <div id="access"><a class="nav" href="#">Direct Access</a></div>
+        <div id="help"><a class="nav" href="#">Help</a></div>
+        <div id="news"><a class="nav" href="stocknews.html">News</a></div>
+    </nav>
+    
+        <div class="faqs">
+        <h1>Frequently Asked Questions</h1>
+        <div class="box">
+            <div class="info">
+                <p>What do you mean 'Stocks'?</p>
+                <button id="btn1" class="button" onclick="hide1()">A</button>
+                <p id="container1" class="para">- A stock (also known as equity) is a security that represents the ownership of a fraction of a corporation. This entitles the owner of the stock to a proportion of the corporation's assets and profits equal to how much stock they own. Units of stock are called "shares.".</p>
+            </div>
+
+            <div class="info">
+                <p>Can we rely on the news related to stock market?</p>
+                <button id="btn2" class="button" onclick="hide2()">A</button>
+                <p id="container2" class="para">-You can surely rely on the market news displayed on website but think and invest wisely in stocks.We aren't responsible for any profit/loss incurred due to invests made on the news update.</p>
+            </div>
+
+            <div class="info">
+                <p>What "NSE" and "BSE" stand for?</p>
+                <button id="btn3" class="button" onclick="hide3()">A</button>
+                <p id="container3" class="para">- "NSE" stand for "National Stock Exchange of India".NSE is located at Mumbai,India. "BSE" stand for "Bombay Stock Exchange" and is located at Mumbai,India. BSE is the leading stock exchange of India.</p>
+            </div>
+
+            <div class="info">
+                <p>When can I invest in Stock Market ?</p>
+                <button id="btn4" class="button" onclick="hide4()">A</button>
+                <p id="container4" class="para">- You can invest anytime in stock market between 9:15 am to 3:30 pm. It remains closed on weekends,i.e., Saturday and Sunday. Also,it is closed on public holidays.</p>
+            </div>
+
+            <div class="info">
+                <p>Are stocks a good investment?</p>
+                <button id="btn5" class="button" onclick="hide5()">A</button>
+                <p id="container5" class="para">- Stocks offer investors the greatest potential for growth (capital appreciation) over the long haul. Investors willing to stick with stocks over long periods of time, say 15 years, generally have been rewarded with strong, positive returns. But stock prices move down as well as up.</p>
+            </div>
+
+            <div class="info">
+                <p>Which are different types of stocks?</p>
+                <button id="btn6" class="button" onclick="hide6()">A</button>
+                <p id="container6" class="para">-Stocks can be categorized into large cap stocks,mid cap stocks,small cap stocks .</p>
+            </div>
+
+            <div class="info">
+                <p> Who can buy stocks?</p>
+                <button id="btn7" class="button" onclick="hide7()">A</button>
+                <p id="container7" class="para">-As such there is as such no age restriction for investing in the stock markets of India. It's just that you should be more than 18 years old to create a Demat account and a trading account. To open your Demat and trading account a PAN card is a must. And you can only apply for a PAN card if you are18 years or older. .</p>
+            </div>
+
+            <div class="query qpara">
+                <p id="qpara">Still having queries? Well,we have got you covered. Feel free to 
+                    <button class="contactbtn">Contact Us</button>
+                </p>
+            </div>
+
+            
+            
+
+        </div>
+     </div>
+    </div>
+    <script src="/js/HelpUs.js"></script>
+    <script>
+        var preload=document.getElementById('loading');
+            function preloader(){
+                preload.style.display = 'none';
+        }
+    </script>
+</body>
+</html>
