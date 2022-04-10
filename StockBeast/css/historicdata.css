@@ -1,0 +1,169 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+body {
+  background: #f2f2f2;
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+}
+
+#loading {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  background: black
+    /* url('https://niftyxperts.com/wp-content/uploads/2017/01/nifty-bull.gif') */
+    no-repeat center;
+  z-index: 99999;
+}
+#preloadergif {
+  height: 10rem;
+  position: relative;
+  justify-content: center;
+  justify-items: center;
+  text-align: center;
+  align-items: center;
+  margin-top: 15rem;
+  margin-left: 33rem;
+}
+.chart {
+  height: 400px;
+  width: 500px;
+  padding-left: 28rem;
+  padding-top: 2rem;
+  padding-bottom: 1.5rem;
+}
+
+@media (max-width: 460px) {
+  .chart {
+    height: 300px;
+    width: 400px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 1rem;
+  }
+}
+
+.wrap {
+  width: 99%;
+  position: absolute;
+}
+@media (max-width: 460px) {
+  .wrap {
+    width: 103%;
+  }
+}
+
+.search {
+  width: 100%;
+  justify-content: center;
+  display: flex;
+}
+
+.inputValue {
+  width: 25%;
+  border: 3px solid #ffffff;
+  font-weight: 550;
+  font-size: 1rem;
+  border-right: none;
+  padding: 5px;
+  height: 20px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #355de4;
+}
+
+.inputValue:focus {
+  color: black;
+}
+@media (max-width: 460px) {
+  .inputValue {
+    width: 50%;
+  }
+}
+
+.button {
+  width: 40px;
+  height: 36px;
+  border: 1px solid #355de4;
+  background: #355de4;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.body {
+  background-color: black;
+}
+
+.heading {
+  text-align: center;
+  color: white;
+  padding-bottom: 2rem;
+}
+
+.stockname {
+  text-align: center;
+  color: white;
+  padding-left: 28rem;
+  font-family: "Open Sans", sans-serif;
+}
+@media (max-width: 460px) {
+  .stockname {
+    text-align: center;
+    padding-left: 0rem;
+  }
+}
+
+.percent {
+  text-align: center;
+  justify-content: center;
+  padding-left: 28rem;
+  font-family: "Open Sans", sans-serif;
+}
+@media (max-width: 460px) {
+  .percent {
+    text-align: center;
+    padding-left: 0rem;
+  }
+}
+.nav {
+  color: white;
+  text-decoration: none;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.nav:hover {
+  transition-duration: 0.5s;
+  color: green;
+  border-radius: 10px;
+}
+
+#navbar {
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto;
+  justify-content: space-evenly;
+  background-color: rgb(34 73 148);
+  color: white;
+  padding: 2vh 0vh;
+  font-size: 4vh;
+  box-sizing: border-box;
+
+}
+
+#navbar>div {
+  font-family: 'Open Sans', sans-serif;
+  display: inline-block;
+  padding: 1vw 3vw;
+  transition-duration: 0.5s;
+  font-size: 1.5rem;
+}
+
+#navbar>div:hover {
+
+  transition-duration: 0.5s;
+  color: green;
+  border-radius: 10px;
+}

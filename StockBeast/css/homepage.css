@@ -1,0 +1,115 @@
+body
+{
+    background-image: url("../image/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    
+}
+#navbar
+{
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    justify-content: space-evenly;
+    background-color: rgb(104, 240, 240);
+    padding: 3vh 0vh;
+    font-size: 4vh;
+    box-sizing: border-box;
+    border-radius: 20px;
+    
+}
+#navbar>div
+{
+    font-family: 'lobster';
+    display: inline-block;
+    cursor:grab;
+    padding:1vw 3vw;
+    transition-duration: 0.5s;
+}
+#navbar>div:hover
+{
+    font-size: 5vh;
+    transition-duration: 0.5s;
+    color: red;
+    background-color: antiquewhite;
+    border-radius: 10px;
+}
+#welcome
+{
+    text-align: center;
+    
+}
+#divWelcome
+{
+    grid-template-rows: auto auto auto;
+    grid-template-columns: auto;
+    justify-content: center;
+    margin: auto auto;
+    
+}
+#welcome
+{
+    background-color: peachpuff;
+    width: 80vw;
+    margin: 5vh auto;
+    padding: 3vh;
+    border-radius: 15px;
+    font-size: 40px;
+    text-shadow: 2px 2px 2px white;
+}
+#legend
+{
+    font-family: monospace;
+}
+#quotes
+{
+    color: peachpuff;
+    width: 60vw;
+    margin: 4vh auto;
+    padding: 6vh;
+    border-radius: 15px;
+    font-size: 30px;
+    word-spacing: 0.4em;
+    font-family: 'Times New Roman', Times, serif;
+    background-color:blue;
+    font-weight: 800;
+    transition-duration: 0.5s;
+    box-shadow: 7px 7px 3px rgb(58, 247, 247);
+}
+#author
+{
+    display: block;
+    text-align: right;
+    font-size: 25px;
+}
+#quotes:hover
+{
+    transition-duration: 0.5s;
+    padding:10vh;
+}
+#loginSec
+{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+    justify-content: center;
+}
+#loginSec>button
+{
+    font-size: 40px;
+    padding: 4vh 10vw;
+    margin:0 10vw;
+    border-radius: 20px;
+    border: none;
+    font-family: 'lobster';
+    background-color: rgb(250, 250, 73);
+    transition-duration: 0.5s;
+}
+#loginSec>button:hover
+{
+    background-color: azure;
+    box-shadow: 10px 10px 5px grey;
+    font-size: 45px;
+    transition-duration: 0.5s;
+}

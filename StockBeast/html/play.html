@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gameroom</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="../image/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../image/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../image/favicon/favicon-16x16.png">
+    <link rel="manifest" href="../image/favicon/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+</head>
+<style>
+    body {
+        height: 100%;
+        background-image: url("../image/play.webp");
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: grid;
+        grid-template-rows: auto;
+        grid-template-columns: auto;
+        justify-content: center;
+        align-content: center;
+    }
+    #game
+    {
+        margin: 100px;
+        display: grid;
+        grid-template-rows: auto;
+        grid-template-columns: auto auto;
+        background-color: aqua;
+        padding: 20px;
+        border-radius: 30px;
+    }
+    #menu
+    {
+        background-color: palegoldenrod;
+        padding: 50px;
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto auto auto;
+        row-gap: 20px;
+        column-gap: 20px;
+    }
+    button
+    {
+        display: block;
+        font-size: x-large;
+        padding: 10px;
+        font-weight: 700;
+        font-family: 'Times new roman';
+        border-radius: 20px;
+        color: white;
+        background-color: black;
+        box-shadow: 5px 5px 3px grey;
+        transition-duration: 1s;
+    }
+    button:hover
+    {
+        background-color: gold;
+        padding: 15px;
+        color: black;
+        transition-duration: 0.5s;
+    }
+    #leaderboard
+    {
+        grid-area: 4/1/5/3;
+    }
+    #results
+    {
+        grid-area: 3/1/4/3;
+    }
+</style>
+
+<body>
+    <div id="game">
+    <div>
+        <img src="../image/game.jpg" alt="image to motivate towards game" height="400px" width="400px">
+    </div>
+    <div id="menu">
+        <button id="createroom">Create Room</button>
+        <button id="joinroom">Join Room</button>
+        <button id="createdrooms">Created Rooms</button>
+        <button id="joinedrooms">Joined Rooms</button>
+        <button id="results">Results</button>
+        <button id="leaderboard">Leaderboard</button>
+    </div>
+    </div>
+    <script src="../script/play.js"></script>
+</body>
+
+</html>
