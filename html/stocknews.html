@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <title>Stock News</title>
+  <style>
+    #stocknews {
+      padding-bottom: 0.7rem;
+      animation-name: example;
+      animation-duration: 2.5s;
+      animation-iteration-count: infinite;
+    }
+
+    @keyframes example {
+      0% {
+        background-color: red;
+      }
+
+      50% {
+        background-color: green;
+      }
+
+      100% {
+        background-color: red;
+      }
+
+    }
+
+    .audio {
+      padding: 0.3rem;
+      float: right;
+    }
+
+    .card {
+      background-color: rgba(87, 78, 78, 0.386);
+      color: white;
+    }
+    .nav {
+    color: white;
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.nav:hover {
+    transition-duration: 0.5s;
+    color: green;
+    border-radius: 10px;
+}
+
+#navbar {
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto;
+    justify-content: space-evenly;
+    background-color: rgb(34 73 148);
+    color: white;
+    padding: 2vh 0vh;
+    font-size: 4vh;
+    box-sizing: border-box;
+
+}
+
+#navbar>div {
+    font-family: 'Open Sans', sans-serif;
+    display: inline-block;
+    padding: 1vw 3vw;
+    transition-duration: 0.5s;
+    font-size: 1.5rem;
+}
+
+#navbar>div:hover {
+
+    transition-duration: 0.5s;
+    color: green;
+    border-radius: 10px;
+}
+
+  </style>
+
+</head>
+
+<body style="background-color: black;">
+
+  <nav id="navbar">
+    <div id="play"><a class="nav" href="#">Play</a></div>
+    <div id="analysis">
+      <a class="nav" href="stock.html">Stock Analysis</a>
+    </div>
+    <div id="friends"><a class="nav" href="#">Friends</a></div>
+    <div id="access"><a class="nav" href="#">Direct Access</a></div>
+    <div id="help"><a class="nav" href="help.html">Help</a></div>
+    <div id="news"><a class="nav" href="stocknews.html">News</a></div>
+  </nav>
+
+  <!-- <audio autoplay controls loop class="audio">
+        <source src="./Scam 1992 Theme - Harshad Mehta (1).mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+      </audio> -->
+  <div class="container my-3" style="background-color: black;">
+    <h3 style="color: white;padding-top: 1rem">Top News <span class="badge badge-secondary" id="stocknews">Stock News</span></h3>
+    <hr>
+    <div class="accordion" id="newsAccordion"></div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script src="index.js"></script>
+</body>
+
+</html>
